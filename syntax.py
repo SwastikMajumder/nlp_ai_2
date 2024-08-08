@@ -345,10 +345,10 @@ def handle_by(eq):
   tmp = [tree_form("d_"+x) for x in tmp]
   return str_form(TreeNode("f_sentence", tmp))
 def process_2(eq):
-  eq_list = search(eq, 10, ["formula-list-5/bhigh.txt", "formula-list-5/high-main.txt", None])
+  eq_list = search(eq, 10, ["bhigh.txt", "high-main.txt", None])
   for item in eq_list:
     if "f_" not in item.replace("f_sentence", "d_none"):
-      a_article = ["rock", "car-accident", "shit"]
+      a_article = ["rock", "car-accident"]
       #the_article = ["homework"]
       for x in a_article:
         item = item.replace("d_"+x, "d_a-"+x)
