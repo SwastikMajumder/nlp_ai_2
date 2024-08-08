@@ -198,7 +198,7 @@ def return_formula_file(file_name):
     return [input_f, output_f] # return
 
 
-import syntax_3_4
+import syntax
 def search(equation, depth, file_list, auto_arithmetic=True, visited=None):
     global log
     if depth == 0: # limit the search
@@ -304,15 +304,15 @@ output = [eq]
 #output = [eq, eq_2]
 #log += [eq, eq_2]
 for item in output:
-    log += search(item, 5, [None, "formula-list-5/simple2_law.txt", None])
+    log += search(item, 5, [None, "simple2_law.txt", None])
 for _ in range(2):
-    tmp = log_process("formula-list-5/simple2_law.txt")
+    tmp = log_process("simple2_law.txt")
     log += tmp
     if tmp == []:
         break
     for item in tmp:
-        log += search(item, 5, [None, "formula-list-5/simple2_law.txt", None])
+        log += search(item, 5, [None, "simple2_law.txt", None])
 log = list(set(log))
 print()
 for item in log:
-    print(syntax_3_4.process_2(str_form(tree_form(item).children[0])))
+    print(syntax.process_2(str_form(tree_form(item).children[0])))
